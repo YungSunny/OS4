@@ -29,9 +29,6 @@ public class StartStop extends main.os.Process {
         }
         else if(step == 1) {
             step++;
-            // Sisteminiu procesu naikinimas
-            // Sisteminiu resursu naikinimas
-            //Primitives.stopProcess(this);
             return;
         }
 

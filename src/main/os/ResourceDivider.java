@@ -1,7 +1,5 @@
 package main.os;
 
-import javafx.beans.binding.ListBinding;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -10,8 +8,6 @@ import java.util.List;
 public class ResourceDivider {
 
     public static List<Process> run(Resource resource) {
-        //if(!resource.active)
-        //    return null;
         List<Process> servedProcesses = new ArrayList<Process>();
         resource.waitingProcesses.sort(new Comparator<Process>() {
             @Override

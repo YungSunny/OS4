@@ -52,7 +52,6 @@ public class JobGovernor extends main.os.Process {
         else if(step == 4) {
             step = 3;
 
-            //Primitives.stopProcess(virtualMachineId);
             CPU.test();
 
             Primitives.createResource(++ResourceDescriptor.id, ResourceDescriptor.APDOROTAS_PERTRAUKIMAS, false);
@@ -60,9 +59,6 @@ public class JobGovernor extends main.os.Process {
 
             return;
         }
-
-        // TODO: interrupto pranesimas
-        // FORK
     }
 
 

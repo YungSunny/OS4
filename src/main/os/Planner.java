@@ -27,12 +27,7 @@ public class Planner {
             System.out.println("EXIT");
             System.exit(0);
         }
-        /*ready.sort(new Comparator<Process>() {
-            @Override
-            public int compare(Process o1, Process o2) {
-                return o1.status - o2.status;
-            }
-        });*/
+
         currentProcess = ready.get(0);
         ready.get(0).status = Process.RUN;
         System.out.print("Planner run: ");

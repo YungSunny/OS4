@@ -17,7 +17,6 @@ public class RealMachine {
     private static Memory realMemory = new Memory(MEMORY_SIZE);
     public static Memory supervisorMemory = new Memory(MEMORY_SIZE);
     private static Memory externalMemory = new Memory(MEMORY_SIZE);
-    private static OutputDevice outputDevice = new OutputDevice();
     private static InputDevice inputDevice = new InputDevice();
     private static VirtualMachine currentVirtualMachine;
     public static int PTR_TABLE_ADDRESS = PageTable.findFreePage().getPageIndex() * PMMU.WORDS_IN_BLOCK;
@@ -162,7 +161,6 @@ public class RealMachine {
             CPU.resetInterrupts();
         }
         main.CPU.setCH2(1);
-        outputDevice.printString(str);
         main.CPU.setCH2(0);
         return str;
     }
@@ -201,10 +199,6 @@ public class RealMachine {
 
     public static VirtualMachine getCurrentVirtualMachine(){
         return currentVirtualMachine;
-    }
-
-    public static OutputDevice getOutputDevice(){
-        return outputDevice;
     }
 
     public static void executeProgram(boolean step) {
@@ -298,10 +292,6 @@ public class RealMachine {
                             executeProgram(true);
                             return;
                         }
-
-                        //if(!CPU.test()){
-                        //    return;
-                        //}
 
                         if(step){
                             return;

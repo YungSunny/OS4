@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 public class Register {
     public static final int SIZE = 4;
-    private byte[] data; // FIXME: make data final?
+    private byte[] data;
 
     public Register() {
         this.data = new byte[SIZE];
@@ -25,7 +25,6 @@ public class Register {
         return data[index];
     }
 
-    // TODO: setByte, but should data be final?..
     public void setByte(int index, byte info) {
         data[index] = info;
     }

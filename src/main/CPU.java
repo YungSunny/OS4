@@ -338,7 +338,6 @@ public class CPU {
             //System.out.println("TI");
             //int index = RealMachine.getNextVirtualMachineIndex();
             RealMachine.unloadVirtualMachine();
-            //RealMachine.loadVirtualMachine(index);
 
             TI = time;
         }
@@ -352,7 +351,6 @@ public class CPU {
         if (SI != 0) {
             //System.out.println("SI");
             setMODE(SUPERVISOR);
-            Main.getGUI().redraw();
             try {
                 Thread.sleep(500);
             } catch(InterruptedException ex) {
@@ -360,13 +358,11 @@ public class CPU {
             if(SI == 1) {
                 CPU.setMODE(CPU.USER);
                 setCH2(1);
-                OutputDevice.printString("" + Word.wordToInt(main.PMMU.read(SP)));
                 setCH2(0);
             }
             else if(SI == 2){
                 CPU.setMODE(CPU.USER);
                 setCH2(1);
-                OutputDevice.printWord(main.PMMU.read(SP));
                 setCH2(0);
             }
             else if(SI == 3){
@@ -374,7 +370,6 @@ public class CPU {
                 for (int i = y; i < z; i++){
 
                     setCH2(1);
-                    OutputDevice.printWord(main.PMMU.read(16 * x + i));
                     setCH2(0);
                 }
             }
@@ -437,10 +432,6 @@ public class CPU {
                     //System.out.println("Reading finished.");
                 }
 
-            }
-            else if(SI == 5){
-                Main.getGUI().redraw();
-                Main.getGUI().showError(RealMachine.processInterupt());
             }
             else if(SI == 6) {
                 //System.out.println("FORK");

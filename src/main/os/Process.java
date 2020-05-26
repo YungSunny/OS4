@@ -15,18 +15,16 @@ public class Process {
     public int id;
     public String name;
     public int step;
-    //public int cpu = new ArrayList<Integer>();
-    //public static List<Integer> p = new ArrayList<Integer>();
-    //public static List<Integer> oa = new ArrayList<Integer>();
+
     public List<Resource> resources;
     public List<Resource> createdResources;
     public int status;
-    //public int sd;
+
     public int father;
     public List<Integer> children = new ArrayList<Integer>();
     public int priority;
 
     public void run() {
-        //System.out.println("---> RUN " + id);
+        System.out.println("---> RUN " + id);
     }
 }

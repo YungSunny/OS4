@@ -21,7 +21,6 @@ public class Word {
         return data[index];
     }
 
-    // TODO: setByte, but should data be final?..
     public void setByte(int index, byte info) {
         data[index] = info;
     }
@@ -53,7 +52,7 @@ public class Word {
         bb.putInt(value);
         Word word = new Word();
         for (int i = 0; i < SIZE; i++) {
-            word.setByte(i, bb.get(i));  // FIXME: data final????
+            word.setByte(i, bb.get(i));
         }
         return word;
     }

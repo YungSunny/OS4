@@ -22,6 +22,5 @@ public class VirtualMachine extends main.os.Process {
             CPU.test();
         }
         RealMachine.executeProgram(true);
-        Main.getGUI().redraw();
     }
 }
